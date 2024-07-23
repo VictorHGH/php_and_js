@@ -68,4 +68,16 @@ function enviar() {
 	}
 }
 
-function codigoHTML() { }
+function codigoHTML(dato) {
+	document.querySelector(".imagenes").insertAdjacentHTML("beforeend", `
+		<div class="imagen"
+			onmouseover="mostrar(this)"
+			onmoseout="ocultar(this)"
+			onclick="ampliar('${dato}')" alt="">
+			<img src='${dato}' alt="">
+			<img class="papelera" src="img/papelera.png" onclick="eliminarImagen(this, '${dato}', event)">
+		</div>
+	`)
+}
+
+function mostrar() { }
