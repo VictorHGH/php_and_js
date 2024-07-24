@@ -76,7 +76,7 @@ function codigoHTML(dato) {
 			onmouseout="ocultar(this)"
 			onclick="ampliar('${dato}')" alt="">
 			<img src='${dato}' alt="">
-			<img class="papelera" src="img/papelera.jpg"
+			<img class="papelera" src="img/papelera.png"
 				onclick="eliminarImagen(this, '${dato}', event)">
 		</div>
 	`)
@@ -123,4 +123,16 @@ function encontrar(yo) {
 			return k
 		}
 	}
+}
+
+function insertar() {
+	fetch('php/insertar.php', {
+		method: 'POST',
+		headers: {
+			'Content-Type': 'application/json'
+		},
+		body: JSON.stringify({
+			aGuardar: albumes
+		})
+	})
 }
