@@ -1,5 +1,4 @@
 <?php
-
 $carpeta = "../ficheros/";
 $nombreOriginal = basename($_FILES["fichero"]["name"]);
 $uploadOK = 1;
@@ -18,7 +17,7 @@ if($_FILES["fichero"]["size"] > 10000000) {
 	echo "Lo siento, tu archivo es demasiado grande. El tamaño máximo es de 10MB.";
 	$uploadOK = 0;
 }
-if ($uploadOK === 1) {
+if($uploadOK === 1) {
 	if(move_uploaded_file($_FILES["fichero"]["tmp_name"],$nombreFinal)){
 		echo $imagenAMostrar;
 	} else {
